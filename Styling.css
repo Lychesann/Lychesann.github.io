@@ -17,27 +17,42 @@ body {
 nav {
     background-color: #333; /* Dark background for navbar */
     color: white;
-    padding: 10px 0;
-    text-align: center;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-    nav .title {
-        font-size: 2.5em;
-        font-weight: bold;
-    }
+.logo-title {
+    display: flex;
+    align-items: center;
+}
 
-    nav a {
-        color: white;
-        text-decoration: none;
-        padding: 10px 20px;
-        margin: 0 15px;
-        border-radius: 5px;
-        font-size: 1.1em;
-    }
+.logo {
+    width: 50px; /* Adjust logo size */
+    height: 50px; /* Adjust logo size */
+    margin-right: 10px;
+    border-radius: 50%; /* Optional: Makes the logo circular */
+}
 
-        nav a:hover {
-            background-color: #575757;
-        }
+.title {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 10px;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+    .nav-links a:hover {
+        background-color: #575757;
+    }
 
 /* Main Content */
 main {
@@ -92,17 +107,25 @@ footer {
 /* Responsive Styles */
 @media (max-width: 768px) {
     nav {
-        text-align: left;
-        padding: 15px;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-        nav .title {
-            font-size: 1.8em;
-        }
+    .logo-title {
+        margin-bottom: 10px;
+    }
 
-        nav a {
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+        .nav-links a {
             margin: 5px 0;
-            padding: 8px 15px;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
         }
 
     main {
