@@ -3,30 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website Title</title>
-    <link rel="stylesheet" href="Styling.css"> <!-- Link to the style.css file -->
+    <title>Google Slides Presentation</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff; /* Light blue background */
+            color: #333;
+        }
+
+        /* Navbar styling */
+        nav {
+            background-color: #4CAF50;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+            nav .title {
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+                margin-left: 15px;
+                font-size: 1em;
+            }
+
+                nav a:hover {
+                    text-decoration: underline;
+                }
+
+        /* Main content styling */
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        iframe {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 
     <!-- Navbar -->
     <nav>
-        <div class="title">Your Website Title</div>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <div class="title">My Awesome Website</div>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- Main content -->
     <main>
-        <h2>Welcome to Our Website</h2>
-        <p>We provide amazing services that help you achieve your goals. Learn more about our offerings, get in touch, or sign up for a free consultation.</p>
-        <a href="#" class="btn">Get Started</a>
+        <h2>Welcome to Our Presentation</h2>
+        <p>Explore our Google Slides presentation below:</p>
+
+        <!-- Embed Google Slides -->
+        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSoJDLWSAPAbQ9d8qbKp0wjDwwk3nJuURl4THGi7FxebnoMDwGGvf96XlY1qQDvaJoRFDpFw1OF1Yfd/embed?start=false&loop=false&delayms=3000"
+                frameborder="0"
+                width="960"
+                height="569"
+                allowfullscreen="true"
+                mozallowfullscreen="true"
+                webkitallowfullscreen="true">
+        </iframe>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Your Website | All Rights Reserved</p>
+        <p>&copy; 2024 My Awesome Website | All Rights Reserved</p>
     </footer>
 
 </body>
