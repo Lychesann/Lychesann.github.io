@@ -29,14 +29,26 @@
                 height: 100%;
                 border: none;
             }
+
+        /* Transparent overlay to block downloads */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0); /* Fully transparent */
+        }
     </style>
 </head>
 <body>
     <div class="iframe-container">
-        <iframe src="https://1drv.ms/p/c/a6ff2179801bacc0/IQS2i7BSd5S5S6-bRfq2PjWaAbWW1egsusl1K_CmoH-Yitc?em=2&amp;wdAr=1.7777777777777777" width="476px" height="288px" frameborder="0">This is an embedded 
+        <div class="overlay"></div> <!-- Transparent overlay -->
+        <iframe src="https://1drv.ms/p/c/a6ff2179801bacc0/IQQI2dFfT-i1Qp6NCoAvvpYPAWU9UZvLeyTRgktdzsopDNM?em=2&amp;wdAr=1.7777777777777777" width="476px" height="288px" frameborder="0">This is an embedded 
         <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by 
-        <a target="_blank" href="https://office.com/webapps">Office</a>.
-        </iframe>
+        <a target="_blank" href="https://office.com/webapps">Office</a>
+        .</iframe>
     </div>
 
     <script>
