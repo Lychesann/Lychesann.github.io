@@ -3,25 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embedded PowerPoint</title>
+    <title>Your Website Title</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f4f8;
-            color: #333;
+        /* General Reset */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        /* Navbar Styles */
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+            nav .title {
+                font-size: 2.5em;
+                font-weight: bold;
+            }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+                margin: 0 15px;
+                border-radius: 5px;
+                font-size: 1.1em;
+            }
+
+                nav a:hover {
+                    background-color: #575757;
+                }
+
+        /* Main Content Styles */
+        main {
+            max-width: 100%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .iframe-container {
-            width: 80%;
-            height: 500px;
-            margin: 50px auto;
             position: relative;
-            border: 1px solid #ccc;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
+            width: 100%;
+            height: 80vh; /* 80% of the viewport height */
+            margin: 20px 0;
         }
 
             .iframe-container iframe {
@@ -29,21 +68,61 @@
                 height: 100%;
                 border: none;
             }
+
+        /* Overlay Styles */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */
+            z-index: 10; /* Ensure the overlay is on top */
+            pointer-events: none; /* Allow interaction with the iframe behind it */
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+            footer p {
+                font-size: 1em;
+            }
     </style>
 </head>
 <body>
-    <div class="iframe-container">
-        <iframe src="YOUR_EMBED_LINK"
-                frameborder="0">
-            This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.
-        </iframe>
-    </div>
+    <nav>
+        <div class="title">Your Website Title</div>
+    </nav>
+
+    <main>
+        <h2>Embedded PowerPoint Presentation</h2>
+        <div class="iframe-container">
+            <!-- Embed PowerPoint from OneDrive -->
+            <iframe src="https://1drv.ms/p/c/a6ff2179801bacc0/EbaLsFJ3lLlLr5tF-rY-NZoBQx992Gq_xcLKqOUlcEn4vQ?e=cWz6hJ"
+                    allowfullscreen="true"
+                    mozallowfullscreen="true"
+                    webkitallowfullscreen="true"></iframe>
+
+            <!-- Overlay to prevent download, but still allow interaction with the slides -->
+            <div class="overlay"></div>
+        </div>
+    </main>
 
     <script>
-        // Prevent right-click to disable downloads
+        // Prevent right-click and downloading of the presentation
         document.addEventListener('contextmenu', function (e) {
             e.preventDefault();
         });
     </script>
+
+    <footer>
+        <p>&copy; 2024 Your Website</p>
+    </footer>
 </body>
 </html>
