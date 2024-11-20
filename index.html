@@ -91,13 +91,19 @@
     <main>
         <h2>Embedded Google Slides</h2>
         <div class="iframe-container">
-            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSoJDLWSAPAbQ9d8qbKp0wjDwwk3nJuURl4THGi7FxebnoMDwGGvf96XlY1qQDvaJoRFDpFw1OF1Yfd/embed?start=false&loop=false&delayms=3000"
+            <iframe src="https://docs.google.com/presentation/d/1WlWO8hrqh10fZ7j753ulMskduEdqYgGq3q6Ag1CwNj8/embed"
                     allowfullscreen="true"
                     mozallowfullscreen="true"
                     webkitallowfullscreen="true"></iframe>
         </div>
     </main>
 
+    <script>
+        // Prevent right-click and downloading of the presentation
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    </script>
     <footer>
         <p>&copy; 2024 Your Website</p>
     </footer>
