@@ -28,33 +28,20 @@
                 width: 100%;
                 height: 100%;
                 border: none;
-                pointer-events: auto;
             }
-
-        /* Transparent overlay to block downloads */
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 10;
-            background: rgba(0, 0, 0, 0); /* Fully transparent */
-            pointer-events: auto;
-        }
     </style>
 </head>
 <body>
     <div class="iframe-container">
-        <div class="overlay"></div> <!-- Transparent overlay -->
+        <!-- PowerPoint Embed -->
         <iframe src="https://1drv.ms/p/c/a6ff2179801bacc0/IQQI2dFfT-i1Qp6NCoAvvpYPAWU9UZvLeyTRgktdzsopDNM?em=2&amp;wdAr=1.7777777777777777" width="476px" height="288px" frameborder="0">This is an embedded 
         <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by 
-        <a target="_blank" href="https://office.com/webapps">Office</a>
-        .</iframe>
+        <a target="_blank" href="https://office.com/webapps">Office</a>.
+        </iframe>
     </div>
 
     <script>
-        // Prevent right-click to disable downloads
+        // Disable right-click to prevent downloads
         document.addEventListener('contextmenu', function (e) {
             e.preventDefault();
         });
