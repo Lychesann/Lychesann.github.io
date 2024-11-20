@@ -3,45 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Secure Presentation</title>
     <link rel="stylesheet" href="Styling.css">
 </head>
 <body>
-    <!-- Navbar -->
     <nav>
-        <div class="title">My Website</div>
-        <a href="#section1">Home</a>
-        <a href="#section2">About</a>
-        <a href="#section3">Contact</a>
+        <div class="title">My Secure Website</div>
     </nav>
-
-    <!-- Main Content -->
     <main>
-        <h2>Welcome to My Website</h2>
-        <p>
-            This is a demo website where you can explore amazing features and information.
-        </p>
-
-        <!-- Embedded Google Slides -->
-        <div style="position: relative; width: 960px; height: 569px; margin: auto;">
+        <h2>Google Slides Presentation</h2>
+        <div class="iframe-container">
             <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSoJDLWSAPAbQ9d8qbKp0wjDwwk3nJuURl4THGi7FxebnoMDwGGvf96XlY1qQDvaJoRFDpFw1OF1Yfd/embed?start=false&loop=false&delayms=3000"
                     frameborder="0"
-                    width="960"
-                    height="569"
                     allowfullscreen="true"
                     mozallowfullscreen="true"
                     webkitallowfullscreen="true">
             </iframe>
-            <!-- Transparent Overlay -->
-            <div class="overlay"></div>
         </div>
-
-        <a href="#" class="btn">Learn More</a>
     </main>
-
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 My Website. All rights reserved.</p>
+        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // Disable right-click on the iframe
+        document.addEventListener('contextmenu', function (event) {
+            const target = event.target;
+            if (target.closest('iframe')) {
+                event.preventDefault();
+            }
+        });
+    </script>
 </body>
 </html>
