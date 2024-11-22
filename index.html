@@ -28,21 +28,36 @@
                 width: 100%;
                 height: 100%;
                 border: none;
-                
             }
+
+        /* Transparent overlay to block interaction */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0); /* Fully transparent */
+            pointer-events: all; /* Block all interactions */
+        }
     </style>
 </head>
 <body>
     <div class="iframe-container">
-        <!-- PowerPoint Embed -->
-        <iframe src="https://1drv.ms/p/c/a6ff2179801bacc0/IQQI2dFfT-i1Qp6NCoAvvpYPAWU9UZvLeyTRgktdzsopDNM?em=2&amp;wdAr=1.7777777777777777" width="476px" height="288px" frameborder="0">This is an embedded 
-        <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by 
-        <a target="_blank" href="https://office.com/webapps">Office</a>.
+        <iframe src="https://your-sharepoint-link-here"
+                width="100%"
+                height="100%"
+                frameborder="0">
+            This is an embedded
+            <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by
+            <a target="_blank" href="https://office.com/webapps">Office</a>.
         </iframe>
+        <div class="overlay"></div> <!-- Transparent overlay blocking interactivity -->
     </div>
 
     <script>
-        // Disable right-click to prevent downloads
+        // Disable right-click to prevent downloading
         document.addEventListener('contextmenu', function (e) {
             e.preventDefault();
         });
