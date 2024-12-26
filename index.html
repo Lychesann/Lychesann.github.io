@@ -30,32 +30,37 @@
                 border: none;
             }
 
-        /* Transparent overlay to block interaction */
-        .overlay {
+        /* Overlay to block interaction in the bottom-right corner */
+        .non-interactive-section {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 10;
-            background: rgba(0, 0, 0, 0); /* Fully transparent */
-            pointer-events: all; /* Block all interactions */
+            bottom: 0; /* Aligned with the bottom edge of the container */
+            right: 0; /* Aligned with the right edge of the container */
+            width: 20%; /* Adjust the width of the blocked area */
+            height: 10%; /* Adjust the height of the blocked area */
+            background: rgba(128, 0, 128, 0.5); /* Purple with 50% transparency */
+            z-index: 20;
+        }
+
+        /* Interactive area (default) */
+        .iframe-container {
+            pointer-events: auto; /* Allow interactions elsewhere */
         }
     </style>
 </head>
 <body>
     <div class="iframe-container">
-        <iframe src="https://1drv.ms/p/c/a6ff2179801bacc0/IQS2i7BSd5S5S6-bRfq2PjWaAbWW1egsusl1K_CmoH-Yitc?em=2&amp;wdAr=1.7777777777777777" width="476px" height="288px" frameborder="0">This is an embedded 
-        <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by 
-        <a target="_blank" href="https://office.com/webapps">Office</a>.
+        <iframe src="https://1drv.ms/p/c/a6ff2179801bacc0/IQS2i7BSd5S5S6-bRfq2PjWaAbWW1egsusl1K_CmoH-Yitc?em=2&amp;wdAr=1.7777777777777777" width="1080px" height="1920px" frameborder="0">
+            This is an embedded
+            <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by
+            <a target="_blank" href="https://office.com/webapps">Office</a>.
         </iframe>
-        <div class="overlay"></div> <!-- Transparent overlay blocking interactivity -->
+        <div class="non-interactive-section"></div> <!-- Non-interactive area -->
     </div>
 
     <script>
-        // Disable right-click to prevent downloading
+        // Disable right-click globally on the entire document
         document.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
+            e.preventDefault(); // Prevent right-click anywhere on the document
         });
     </script>
 </body>
