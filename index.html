@@ -30,16 +30,6 @@
                 border: none;
             }
 
-        /* Overlay to block interaction in the bottom-right corner */
-        .non-interactive-section {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 20%; /* Adjust as needed */
-            height: 10%; /* Adjust as needed */
-            background: rgba(128, 0, 128, 0.5);
-            z-index: 20;
-        }
         /* Transparent overlay to block right-click */
         .overlay {
             position: absolute;
@@ -54,32 +44,31 @@
 </head>
 <body>
     <div class="iframe-container">
-        <iframe src="https://1drv.ms/p/c/a6ff2179801bacc0/IQS2i7BSd5S5S6-bRfq2PjWaAbWW1egsusl1K_CmoH-Yitc?em=2&amp;wdAr=1.7777777777777777">
-            This is an embedded
-            <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by
-            <a target="_blank" href="https://office.com/webapps">Office</a>.
+        <iframe src="https://1drv.ms/p/c/a6ff2179801bacc0/IQS2i7BSd5S5S6-bRfq2PjWaAbWW1egsusl1K_CmoH-Yitc?em=2&amp;wdAr=1.7777777777777777"
+                id="ppt-frame"
+                title="Embedded PowerPoint">
         </iframe>
-        <div class="non-interactive-section"></div>
+        <div class="overlay"></div>
     </div>
 
     <script>
-    // Ensure the iframe is interactive and can use arrow keys for navigation
-    const iframe = document.getElementById('ppt-frame');
+        // Ensure the iframe can still respond to arrow keys for slide navigation
+        const iframe = document.getElementById('ppt-frame');
 
-    // Focus the iframe when the page loads
-    window.addEventListener('load', () => {
-    iframe.focus();
-    });
+        // Focus the iframe when the page loads
+        window.addEventListener('load', () => {
+            iframe.focus();
+        });
 
-    // Refocus the iframe on any click to ensure arrow key navigation works
-    document.addEventListener('click', () => {
-    iframe.focus();
-    });
+        // Refocus the iframe on any click to ensure arrow key navigation works
+        document.addEventListener('click', () => {
+            iframe.focus();
+        });
 
-    // Disable right-click globally
-    document.addEventListener('contextmenu', function (e) {
-    e.preventDefault();
-    });
+        // Disable right-click globally
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault(); // Prevent right-click anywhere on the document
+        });
     </script>
 </body>
 </html>
