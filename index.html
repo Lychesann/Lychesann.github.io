@@ -30,7 +30,7 @@
                 border: none;
             }
 
-        /* Transparent overlay to block right-click */
+        /* Overlay to intercept right-click but allow interactions */
         .overlay {
             position: absolute;
             top: 0;
@@ -39,6 +39,7 @@
             height: 100%;
             background: transparent;
             z-index: 10;
+            pointer-events: none; /* Let interactions pass through */
         }
     </style>
 </head>
@@ -52,22 +53,25 @@
     </div>
 
     <script>
-        // Ensure the iframe can still respond to arrow keys for slide navigation
-        const iframe = document.getElementById('ppt-frame');
+        // Disable right-click on the overlay
+        const overlay = document.querySelector('.overlay');
+        overlay.addEventListener('contextmenu', (e) => {
+            e.preventDefault(); // Prevent the context menu on right-click
+        });
 
-        // Focus the iframe when the page loads
+        // Ensure iframe retains focus for arrow key navigation
+        const iframe = document.getElementById('ppt-frame');
         window.addEventListener('load', () => {
             iframe.focus();
         });
 
-        // Refocus the iframe on any click to ensure arrow key navigation works
         document.addEventListener('click', () => {
             iframe.focus();
         });
 
-        // Disable right-click globally
+        // Disable right-click globally (optional, if required for the whole page)
         document.addEventListener('contextmenu', function (e) {
-            e.preventDefault(); // Prevent right-click anywhere on the document
+            e.preventDefault();
         });
     </script>
 </body>
