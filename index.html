@@ -50,6 +50,16 @@
             background: rgba(128, 0, 128, 0.5); /* Purple with 50% transparency */
             z-index: 20;
         }
+        /* Overlay to block interaction in the bottom-right corner */
+        .non-interactive-sectionBottomLeft {
+            position: absolute;
+            bottom: 0; /* Aligned with the bottom edge of the container */
+            left: 0; /* Aligned with the right edge of the container */
+            width: 50%; /* Adjust the width of the blocked area */
+            height: 10%; /* Adjust the height of the blocked area */
+            background: rgba(128, 0, 128, 0.5); /* Purple with 50% transparency */
+            z-index: 20;
+        }
         .non-interactive-sectionTop {
             position: absolute;
             top: 0; /* Aligned with the top edge of the container */
@@ -69,6 +79,7 @@
         </iframe>
         <div class="non-interactive-sectionRight"></div>
         <div class="non-interactive-sectionLeft"></div>
+        <div class="non-interactive-sectionBottomLeft"></div>
         <div class="non-interactive-sectionTop"></div>
     </div>
 
