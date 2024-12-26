@@ -31,7 +31,7 @@
             }
 
         /* Overlay to block interaction in the bottom-right corner */
-        .non-interactive-section {
+        .non-interactive-sectionRight {
             position: absolute;
             bottom: 0; /* Aligned with the bottom edge of the container */
             right: 0; /* Aligned with the right edge of the container */
@@ -41,7 +41,7 @@
             z-index: 20;
         }
         /* Overlay to block interaction in the bottom-right corner */
-        .non-interactive-section {
+        .non-interactive-sectionLeft {
             position: absolute;
             bottom: 0; /* Aligned with the bottom edge of the container */
             left: 0; /* Aligned with the right edge of the container */
@@ -58,7 +58,8 @@
                 id="ppt-frame"
                 title="Embedded PowerPoint">
         </iframe>
-        <div class="non-interactive-section"></div>
+        <div class="non-interactive-sectionRight"></div>
+        <div class="non-interactive-sectionLeft"></div>
     </div>
 
     <script>
